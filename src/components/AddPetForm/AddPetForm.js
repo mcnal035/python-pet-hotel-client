@@ -10,7 +10,7 @@ class addPetForm extends Component  {
   return (
     <div className="App">
       <header>
-      <h1>Add Pet Form</h1>
+      <h1>Add Pets Form</h1>
       </header>
     </div>
   );
