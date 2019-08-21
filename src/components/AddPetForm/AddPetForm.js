@@ -4,20 +4,20 @@ import { connect } from 'react-redux';
 
 class addPetForm extends Component  {
 
-  componentDidMount (){
-    // this.props.dispatch({ type: 'GET_PETS', payload: })
+  componentDidMount() {
+    // this.props.dispatch({ type: 'GET_PETS', payload: ? })
   }
-
   state = {
     newPet: {
       name: '',
       color: '',
       breed: '',
+      owner_id: '',
     }
   }
 
   handleChange = (propertyName, event) => {
-    console.log('event happened')
+    console.log('change happened')
     this.setState({
       newPet: {
         ...this.state.newPet,
@@ -25,7 +25,6 @@ class addPetForm extends Component  {
       }
     });
   }
-
 
   addNewPet = event => {
     event.preventDefault();
@@ -41,9 +40,7 @@ class addPetForm extends Component  {
       }
     });
     this.props.dispatch({ type: 'FETCH_PETS' });
-    
   }
-
 
 
   render() {
@@ -70,7 +67,7 @@ class addPetForm extends Component  {
           <option placeholder="Owner Name"></option>
         </select>
 
-        <button type="submit">Submit</button>
+        <button type="submit" onClick={this.addNewPet}>Submit</button>
     </form>
     </div>
     </>
