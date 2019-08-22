@@ -31,6 +31,7 @@ class addPetForm extends Component  {
 
   addNewPet = (event) => {
     event.preventDefault();
+    console.log(this.state.newPet)
     this.props.dispatch({ type: 'ADD_PET', payload: this.state.newPet })
     this.props.dispatch({ type: 'FETCH_PETS' });
   }

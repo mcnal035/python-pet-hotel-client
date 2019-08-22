@@ -16,20 +16,20 @@ class addOwnerForm extends Component  {
 
   addNewOwner = event => {
     event.preventDefault();
-    let objectToSend = {
-      ...this.state.newOwner
-    }
-
-    this.props.dispatch({ type: 'ADD_OWNER', payload: objectToSend })
-    this.setState({
-      newOwner: {
-        ...this.state.newOwner,
-        id: this.state.newOwner.id + 1,
-      }
-    });
+    this.props.dispatch({ type: 'ADD_OWNER', payload: this.state })
     this.props.dispatch({ type: 'FETCH_OWNERS' });
   }
-    
+
+  handleChange = (propertyName, event) => {
+    console.log('event happened', this.state)
+    this.setState({
+      newOwner: {
+        ...this.state.newOwner.name,
+        [propertyName]: event.target.value,
+      }
+    });
+  }
+
   render() {
   return (
     <>
@@ -40,13 +40,15 @@ class addOwnerForm extends Component  {
     </div>
     <div>
       <form>
-          <button type="submit" onClick={this.addNewOwner}>Submit</button>
+        <input onChange={(event) => this.handleChange('name', event)} placeholder="Owner Name" 
+        value={this.state.newOwner.name}></input>
+        <button type="submit" onClick={this.addNewOwner}>Submit</button>
       </form>
     </div>
     <table>
       <thead>
         <tr>
-          <th></th>
+          <th>Owner List</th>
         </tr>
       </thead>
       <tbody>
