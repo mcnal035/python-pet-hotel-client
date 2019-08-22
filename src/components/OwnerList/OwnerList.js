@@ -1,21 +1,34 @@
 import React, {Component} from 'react';
-
+import { connect } from 'react-redux';
 
 class OwnerList extends Component  {
 
-
-
+  deleteOwner = () => {
+    
+  }
 
   render() {
   return (
+    <>
     <div className="App">
       <header>
       <h1>Owner List</h1>
-      {/* owner list will display the owners */}
       </header>
     </div>
+    <tr>
+      <td>{this.props.item.name}</td>
+      {/* <td>{this.props.item.??}</td> */}
+      <td>
+        <button id="deleteButton" onClick="deleteOwner"></button>
+      </td>
+    </tr>
+    </>
   );
   }
 }
 
-export default OwnerList;
+const mapStateToProps = reduxStore => ({
+  reduxStore
+})
+
+export default connect(mapStateToProps)(OwnerList);
