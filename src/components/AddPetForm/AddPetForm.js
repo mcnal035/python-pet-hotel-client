@@ -9,6 +9,7 @@ class addPetForm extends Component  {
     this.props.dispatch({ type: 'FETCH_PETS' })
     this.props.dispatch({ type: 'FETCH_OWNERS'})
   }
+  
   state = {
     newPet: {
       name: '',
@@ -59,7 +60,6 @@ class addPetForm extends Component  {
             return (<option key={i} value={owner.name}>{owner.name}</option>);
           })}
         </select>
-
         <button type="submit" onClick={(event) => this.addNewPet(event)}>Submit</button>
     </form>
     <table>
@@ -70,12 +70,18 @@ class addPetForm extends Component  {
         <th>Breed</th> 
         <th>Color</th>
         <th>Checked In</th>
+        <th>Actions</th>
       </tr>
       </thead> 
       <tbody>
         {this.props.reduxStore.pets.map(item => {
           return(
+            <>
           <HistoryList key={item.id} item={item} />
+          
+         
+         
+          </>
         )})}
       </tbody>
     </table>
