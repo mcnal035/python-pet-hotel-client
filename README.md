@@ -1,68 +1,46 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Python Pet Hotel
 
-## Available Scripts
+This is an app that allows the user to track pets in a hotel. The user can add, delete, and update the status of the pet in the hotel. The pet hotel consists of two views. The first allows the user to add a pet and view all current pets at the hotel. They can delete the pet and have the option to toggle between checking in and checking their pet out. The second view allows the user to add a pet owner as well as viewing the owners that currently have their pets checked into the hotel. 
 
-In the project directory, you can run:
+## Built With
 
-### `npm start`
+- Python
+- React.js
+- Redux
+- Bootstrap
+- Postgresql
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## Getting Started
 
-### `npm test`
+- [Brew](https://brew.sh);
+- [postgreSQL](https://www.postgresql.org);
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Steps to get the development environment running.
 
-### `npm run build`
+1. Download this project.
+2. On Client Side: `npm install`
+3. On Client Side: `npm start`
+4. On Server Side: `python3 -m venv venv`
+5. On Server Side: `source venv/bin/activate`
+6. On Server Side: `pip install flask`
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Screen Shot
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+![Python Pet Hotel](/images/hotel.jpg)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Feature 
+- [x] Add Pet/Add Owner
+- [x] Delete Pet/Delete Owner
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Authors
+* Molly Brittenham Ellison 
+* Sean R Olson
+* Mitch J Olson
+* Mark T McNally
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Acknowledgments
+* Our pets
