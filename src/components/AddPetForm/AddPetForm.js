@@ -76,13 +76,8 @@ class addPetForm extends Component  {
       <tbody>
         {this.props.reduxStore.pets.map(item => {
           return(
-            <>
           <HistoryList key={item.id} item={item} />
-          
-         
-         
-          </>
-        )})}
+                 )})}
       </tbody>
     </table>
     </>
