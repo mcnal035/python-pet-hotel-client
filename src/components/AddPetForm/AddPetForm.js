@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
+import HistoryList from '../HistoryList/HistoryList';
+import '../App/App.css';
 
 class addPetForm extends Component  {
 
@@ -41,8 +43,6 @@ class addPetForm extends Component  {
       <h1>Add Pet Form</h1>
       </header>
     </div>
-
-    <div>
     <form>
         <input placeholder="Pet Name" value={this.state.newPet.name}
             onChange={(event) => this.handleChange('name', event)}></input>
@@ -61,7 +61,23 @@ class addPetForm extends Component  {
 
         <button type="submit" onClick={(event) => this.addNewPet(event)}>Submit</button>
     </form>
-    </div>
+    <table>
+      <thead>
+      <tr>
+        <th>Owner</th>
+        <th>Pet</th>
+        <th>Breed</th> 
+        <th>Color</th>
+        <th>Checked In</th>
+      </tr>
+      </thead> 
+      <tbody>
+        {this.props.reduxStore.pets.map(item => {
+          return(
+          <HistoryList key={item.id} item={item} />
+        )})}
+      </tbody>
+    </table>
     </>
   );
   }
