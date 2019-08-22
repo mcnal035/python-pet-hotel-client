@@ -4,8 +4,6 @@ import React, {Component} from 'react';
 class OwnerList extends Component  {
 
 
-
-
   render() {
   return (
     <div className="App">
