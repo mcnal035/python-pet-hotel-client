@@ -31,3 +31,24 @@
     transform: rotate(360deg);
   }
 }
+th {
+  text-align: center;
+}
+
+tr {
+  border-bottom: 1px solid black;
+  padding: 10px;
+}
+
+td {
+  border-bottom: 1.5px solid grey;
+  border-right: 3px solid rgb(42, 28, 80);
+  box-shadow: 2px;
+  text-align: center;
+  padding: 0px 20px 0px 20px;
+}
+
+table{ 
+  text-align: center;
+  margin: auto;
+}
