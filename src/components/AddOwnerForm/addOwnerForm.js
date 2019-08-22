@@ -6,15 +6,15 @@ import OwnerList from '../OwnerList/OwnerList';
 class addOwnerForm extends Component  {
 
   componentDidMount() {
+    this.props.dispatch({ type: 'FETCH_PETS' })
     this.props.dispatch({ type: 'FETCH_OWNERS'})
+    
   }
   state = {
-    newOwner: {
-      name: '',
-    }
+    name: ''
   }
 
-  addNewOwner = event => {
+  addNewOwner = (event) => {
     event.preventDefault();
     this.props.dispatch({ type: 'ADD_OWNER', payload: this.state })
     this.props.dispatch({ type: 'FETCH_OWNERS' });
@@ -23,10 +23,7 @@ class addOwnerForm extends Component  {
   handleChange = (propertyName, event) => {
     console.log('event happened', this.state)
     this.setState({
-      newOwner: {
-        ...this.state.newOwner.name,
         [propertyName]: event.target.value,
-      }
     });
   }
 
@@ -41,21 +38,22 @@ class addOwnerForm extends Component  {
     <div>
       <form>
         <input onChange={(event) => this.handleChange('name', event)} placeholder="Owner Name" 
-        value={this.state.newOwner.name}></input>
+        value={this.state.name}></input>
         <button type="submit" onClick={this.addNewOwner}>Submit</button>
       </form>
     </div>
     <table>
       <thead>
         <tr>
-          <th>Owner List</th>
+          <th>Name</th>
+          <th>Pet Count</th>
+          <th>&nbsp;</th>
         </tr>
       </thead>
       <tbody>
         {this.props.reduxStore.owners.map(item => {
           return(
             <OwnerList key={item.id} item={item} />
-          
         )
         })}
         </tbody>
