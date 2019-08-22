@@ -5,8 +5,8 @@ import axios from 'axios';
 function* deleteOwner(action) {
     console.log('in deleteOwner, action.payload is', action.payload);
     try {
-        yield axios.delete(`/deleteOwners/${action.payload}`);
-        yield put({ type: 'FETCH_OWNER' });
+        yield axios.delete(`/deleteowner/${action.payload}`);
+        yield put({ type: 'FETCH_OWNERS' });
     }
     catch (error) {
         console.log('Error deleting owner', error);
