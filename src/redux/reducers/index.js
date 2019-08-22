@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 import pets from './petsReducer';
+import owners from './ownersReducer';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -9,6 +10,7 @@ import pets from './petsReducer';
 // This is what we get when we use 'state' inside of 'mapStateToProps'
 const rootReducer = combineReducers({
     pets,
+    owners,
 });
 
 export default rootReducer;
