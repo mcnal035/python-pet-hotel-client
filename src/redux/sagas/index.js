@@ -5,6 +5,7 @@ import addOwnerSaga from './addOwnerSaga';
 import addPetSaga from './addPetSaga';
 import deleteOwnerSaga from './deleteOwnerSaga';
 import deletePetSaga from './deletePetSaga';
+import updateCheckInSaga from './updateCheckInSaga';
 
 
 // rootSaga is the primary saga.
@@ -21,5 +22,7 @@ export default function* rootSaga() {
         addOwnerSaga(),
         addPetSaga(),
         deleteOwnerSaga(),
+        deletePetSaga(),
+        updateCheckInSaga(),
     ]);
 }
