@@ -11,9 +11,6 @@ class OwnerList extends Component  {
   return (
     <>
     <div className="App">
-      <header>
-      <h1>Owner List</h1>
-      </header>
     </div>
     <tr>
       <td>{this.props.item.name}</td>

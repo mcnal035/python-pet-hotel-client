@@ -3,6 +3,9 @@ import fetchPetsSaga from './fetchPetsSaga';
 import fetchOwnersSaga from './fetchOwnersSaga';
 import addOwnerSaga from './addOwnerSaga';
 import addPetSaga from './addPetSaga';
+import deleteOwnerSaga from './deleteOwnerSaga';
+import deletePetSaga from './deletePetSaga';
+
 
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
@@ -17,5 +20,6 @@ export default function* rootSaga() {
         fetchOwnersSaga(),
         addOwnerSaga(),
         addPetSaga(),
+        deleteOwnerSaga(),
     ]);
 }
