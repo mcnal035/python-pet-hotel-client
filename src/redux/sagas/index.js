@@ -14,5 +14,8 @@ import addPetSaga from './addPetSaga';
 export default function* rootSaga() {
     yield all([
         fetchPetsSaga(),
+        fetchOwnersSaga(),
+        addOwnerSaga(),
+        addPetSaga(),
     ]);
 }
