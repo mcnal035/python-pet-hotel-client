@@ -7,13 +7,14 @@ class addPetForm extends Component  {
 
   componentDidMount() {
     this.props.dispatch({ type: 'FETCH_PETS' })
+    this.props.dispatch({ type: 'FETCH_OWNERS'})
   }
   state = {
     newPet: {
       name: '',
       color: '',
       breed: '',
-      owner_id: '',
+      owner_name: 'Molly',
     }
   }
 
@@ -25,24 +26,14 @@ class addPetForm extends Component  {
         [propertyName]: event.target.value,
       }
     });
+    console.log(this.state);
   }
 
-  addNewPet = event => {
+  addNewPet = (event) => {
     event.preventDefault();
-    let objectToSend = {
-      ...this.state.newPet
-    }
-
-    this.props.dispatch({ type: 'ADD_PET', payload: objectToSend })
-    this.setState({
-      newPet: {
-        ...this.state.newPet,
-        id: this.state.newPet.id + 1,
-      }
-    });
+    this.props.dispatch({ type: 'ADD_PET', payload: this.state.newPet })
     this.props.dispatch({ type: 'FETCH_PETS' });
   }
-
 
   render() {
   return (
@@ -62,11 +53,13 @@ class addPetForm extends Component  {
         <input placeholder="Pet Breed" value={this.state.newPet.breed}
             onChange={(event) => this.handleChange('breed', event)}></input>
           
-        <select>
-          <option placeholder="Owner Name"></option>
+        <select onChange={(event) => this.handleChange('owner_name', event)}>
+          {this.props.reduxStore.owners.map((owner, i) => {
+            return (<option key={i} value={owner.name}>{owner.name}</option>);
+          })}
         </select>
 
-        <button type="submit" onClick={this.addNewPet}>Submit</button>
+        <button type="submit" onClick={(event) => this.addNewPet(event)}>Submit</button>
     </form>
     <table>
       <thead>

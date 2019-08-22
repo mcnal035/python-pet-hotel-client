@@ -5,7 +5,7 @@ import axios from 'axios';
 function* addOwner(action) {
     console.log('in addOwner, action.payload is', action.payload);
     try {
-        yield axios.post(`/addowners`, action.payload);
+        yield axios.post(`/addowner`, action.payload);
         yield put({ type: 'FETCH_OWNERS' });
     }
     catch (error) {
