@@ -1,8 +1,13 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
+import OwnerList from '../OwnerList/OwnerList';
+
 
 class addOwnerForm extends Component  {
 
+  componentDidMount() {
+    this.props.dispatch({ type: 'FETCH_OWNERS'})
+  }
   state = {
     newOwner: {
       name: '',
@@ -38,6 +43,21 @@ class addOwnerForm extends Component  {
           <button type="submit" onClick={this.addNewOwner}>Submit</button>
       </form>
     </div>
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {this.props.reduxStore.owners.map(item => {
+          return(
+            <OwnerList key={item.id} item={item} />
+          
+        )
+        })}
+        </tbody>
+    </table>
     </>
   );
   }
