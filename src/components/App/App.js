@@ -7,7 +7,7 @@ import {
   Link,
 } from 'react-router-dom';
 
-import addOwnerForm from '../AddOwnerForm/addOwnerForm';
+import addOwnerForm from '../AddOwnerForm/AddOwnerForm';
 import addPetForm from '../AddPetForm/AddPetForm';
 
 
