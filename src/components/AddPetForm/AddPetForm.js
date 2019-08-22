@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 class addPetForm extends Component  {
 
   componentDidMount() {
-    // this.props.dispatch({ type: 'GET_PETS', payload: ? })
+    this.props.dispatch({ type: 'FETCH_PETS' })
   }
   state = {
     newPet: {
